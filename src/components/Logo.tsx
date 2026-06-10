@@ -19,7 +19,7 @@ export default function Logo({ className = "", variant = "header", scrolled = fa
   return (
     <div className={`flex items-center justify-center select-none ${className}`}>
       <img
-        src="/logo.webp"
+        src={`${import.meta.env.BASE_URL}logo.webp`}
         alt="Jyotish9 Logo"
         referrerPolicy="no-referrer"
         className={`${logoHeightClass} w-auto object-contain transition-all duration-300`}
