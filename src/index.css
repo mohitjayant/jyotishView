@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold-300: #ffe066;
+  --color-gold-400: #FFD700;
+  --color-gold-500: #e6c200;
+  --color-amethyst-600: #8E24AA;
+  --color-surface: #0a0d1c;
+  --color-surface-dim: #0f1221;
+  --color-surface-bright: #353849;
+  --color-surface-lowest: #050714;
+  --color-surface-low: #101322;
+  --color-surface-container: #15192b;
+  --color-surface-container-high: #1a1f33;
+  --color-surface-container-highest: #20263b;
+
+  --font-heading: "Cinzel", serif;
+  --font-serif-sub: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --animate-spin-slow: spin 60s linear infinite;
+  --animate-spin-reverse-slow: spin-reverse 90s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-delayed: float 8s ease-in-out 4s infinite;
+
+  @keyframes spin-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+@utility glass-panel {
+  background: rgba(21, 25, 43, 0.4);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+@utility hover-glow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.1), inset 0 0 30px rgba(255, 215, 0, 0.05);
+    border-color: rgba(255, 215, 0, 0.4);
+    transform: translateY(-4px);
+  }
+}
+
+@utility btn-glow {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2), inset 0 -2px 10px rgba(230, 194, 0, 0.4);
+  transition: all 0.4s ease;
+  &:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), inset 0 -2px 10px rgba(230, 194, 0, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+@utility border-gradient {
+  position: relative;
+  background: clip-padding-box;
+  border: 1px solid transparent;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px; right: -1px; bottom: -1px; left: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,215,0,0.4), rgba(255,255,255,0.05), rgba(142,36,170,0.3));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: white;
+  background-color: #0a0d1c;
+}
+h1, h2 {
+  font-family: 'Cinzel', serif;
+}
+h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Custom Webkit scrollbar for the scroll slider on the right side of the screen */
+::-webkit-scrollbar {
+  width: 4px; /* Reduced width to 1/3 of the standard 12px scrollbar */
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050714; /* Deep space dark contrast */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e6c200 0%, #FFD700 50%, #ffe066 100%); /* Celestial Gold gradient */
+  border-radius: 9999px;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffe066; /* Hover glow highlight */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Scrollbar support for Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #FFD700 #050714;
+}
+
+

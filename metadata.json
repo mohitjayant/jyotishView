@@ -1,0 +1,6 @@
+{
+  "name": "Jyotish9",
+  "description": "Jyotish9 is India's most advanced responsive astrology engine, providing planetary chart visualizations, AI Kundli analysis, Matchmaking, and celestial guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
