@@ -29,7 +29,7 @@ var import_genai = require("@google/genai");
 var import_dotenv = __toESM(require("dotenv"), 1);
 import_dotenv.default.config();
 var app = (0, import_express.default)();
-var PORT = 3e3;
+var PORT = process.env.PORT ? parseInt(process.env.PORT) : 3001;
 app.use(import_express.default.json());
 var waitlistEmails = [];
 var ai = null;
